@@ -1,26 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zps-jc-kb5">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Welcome-->
+        <scene sceneID="tB1-aI-DVA">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController id="Zps-jc-kb5" userLabel="Welcome" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VLI-p4-3gV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kFq-ir-nR5" kind="relationship" relationship="rootViewController" id="7vs-CT-MU8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McS-7i-8K4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-51" y="644"/>
+        </scene>
+        <!--Meme Grid View Tab-->
+        <scene sceneID="ec6-zv-ksQ">
+            <objects>
+                <viewController id="dOm-qj-h7h" userLabel="Meme Grid View Tab" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nL0-nf-Ut6"/>
+                        <viewControllerLayoutGuide type="bottom" id="XLj-Nv-1w8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZAn-n6-qUO">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Grid Filled" id="A7l-p2-8cT" userLabel="Grid Tab Bar Item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGX-m0-6tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="975"/>
+        </scene>
+        <!--Meme List View Tab-->
+        <scene sceneID="LXB-93-SiZ">
+            <objects>
+                <viewController id="zOl-be-jaV" userLabel="Meme List View Tab" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H1Y-FB-Zm3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ofI-xM-9Kg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eDV-G1-jxF">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="List Filled" id="Yk9-9K-Hm2" userLabel="List Tab Bar Item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5R-S0-nFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="314"/>
+        </scene>
+        <!--Meme View Tab-->
+        <scene sceneID="lOB-CD-9Ri">
+            <objects>
+                <tabBarController id="kFq-ir-nR5" userLabel="Meme View Tab" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="uX9-uW-tuM">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="btj-EQ-S4U"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rKE-F7-XOX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zOl-be-jaV" kind="relationship" relationship="viewControllers" id="Gap-8Z-voH"/>
+                        <segue destination="dOm-qj-h7h" kind="relationship" relationship="viewControllers" id="Lvb-78-kap"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6h8-cF-2h9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="645"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Grid Filled" width="32" height="32"/>
+        <image name="List Filled" width="32" height="32"/>
+    </resources>
 </document>
