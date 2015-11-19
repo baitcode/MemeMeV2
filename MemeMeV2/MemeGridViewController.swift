@@ -14,7 +14,7 @@ class MemeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var memeImage: UIImageView!
     
     func setMeme(meme: Meme) {
-        self.memeImage.image = meme.memedImage
+        memeImage.image = meme.memedImage
     }
 }
 
@@ -27,13 +27,13 @@ class MemeGridViewController: UIViewController, UICollectionViewDataSource, UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collection.dataSource = self
-        self.collection.delegate = self
+        collection.dataSource = self
+        collection.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.collection.reloadData()
+        collection.reloadData()
     }
         
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,14 +47,14 @@ class MemeGridViewController: UIViewController, UICollectionViewDataSource, UICo
     }
  
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selectedMeme = MemeStorage.instance.at(indexPath.row)
-        self.performSegueWithIdentifier("showMeme", sender: self)
+        selectedMeme = MemeStorage.instance.at(indexPath.row)
+        performSegueWithIdentifier("showMeme", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMeme" {
             let controller = segue.destinationViewController as! ShowMemeController
-            controller.meme = self.selectedMeme
+            controller.meme = selectedMeme
         }
     }
 }
