@@ -58,7 +58,7 @@ class MemeEditorController: UIViewController, UIImagePickerControllerDelegate, U
         unsubscribeFromKeyboardNotifications()
     }
     
-    func setupState(){
+    func setupState() {
         let selected = image.image != nil;
         
         btnShare.enabled = selected
